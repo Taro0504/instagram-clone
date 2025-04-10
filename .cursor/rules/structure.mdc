@@ -1,0 +1,50 @@
+---
+description: フォルダ構造をまとめたファイルです。
+globs: 
+alwaysApply: false
+---
+
+my-instagram-clone/
+├── app/                              # Next.js の App Router 用メインディレクトリ
+│   ├── layout.tsx                    # 全ページ共通のレイアウト（ヘッダー、フッター、テーマ切替など）
+│   ├── globals.css                   # グローバルスタイル
+│   ├── page.tsx                      # ホームページ（タイムライン表示など）
+│   ├── auth/                         # 認証関連ページ
+│   │   ├── login/                    
+│   │   │   └── page.tsx              # ログイン画面
+│   │   └── register/                 
+│   │       └── page.tsx              # ユーザー登録画面
+│   ├── profile/                      # プロフィール関連ページ
+│   │   ├── page.tsx                  # プロフィール表示画面
+│   │   └── edit/                     
+│   │       └── page.tsx              # プロフィール編集画面
+│   ├── posts/                        # 投稿関連ページ
+│   │   ├── page.tsx                  # 投稿一覧（タイムライン）
+│   │   └── [id]/                     # 各投稿の詳細ページ
+│   │       └── page.tsx              
+│   ├── notifications/                # 通知ページ（いいね、コメント、フォローなど）
+│   │   └── page.tsx
+│   └── search/                       # 検索機能用（ユーザー、ハッシュタグなど）
+│       └── page.tsx
+├── components/                       # 再利用可能な UI コンポーネント
+│   ├── Navbar.tsx                    # ナビゲーションバー
+│   ├── Footer.tsx                    # フッター
+│   ├── PostCard.tsx                  # タイムライン上の投稿表示用カード
+│   ├── Comment.tsx                   # コメント表示・投稿コンポーネント
+│   ├── ProfileCard.tsx               # ユーザー情報カード（フォロー／アンフォロー含む）
+│   ├── Modal.tsx                     # モーダルウィンドウ（詳細表示、編集用）
+│   └── NotificationItem.tsx          # 通知リストの各項目表示用
+├── lib/                              # 共通ライブラリ・APIクライアント
+│   ├── supabase.ts                   # supabase 初期化・設定（認証など）
+│   ├── api.ts                        # API 呼び出しユーティリティ（Next.js APIルート用など）
+│   └── utils.ts                      # ユーティリティ関数群（例：日付フォーマット、入力検証）
+├── public/                           # 静的ファイル（画像、アイコン、フォントなど）
+│   ├── images/                       
+│   └── icons/
+├── styles/                           # CSS ファイル（Tailwind CSS 等の設定ファイル含む）
+│   ├── globals.css                   # グローバルスタイル（app/globals.css と連携）
+│   └── tailwind.config.js            # Tailwind CSS の設定ファイル
+├── .env.local                        # 環境変数設定（Firebase キー等）
+├── next.config.js                    # Next.js の設定ファイル
+├── tsconfig.json                     # TypeScript の設定ファイル
+└── package.json                      # プロジェクト依存パッケージ情報
