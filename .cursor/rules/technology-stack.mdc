@@ -1,0 +1,13 @@
+---
+description: 使用する技術スタック、ライブラリ等を記載しています
+globs: 
+alwaysApply: false
+---
+- 状態管理ライブラリ
+ - jotai
+
+- UIコンポーネントライブラリ
+ - shadcn UI
+
+- routerライブラリ
+ - tanstack router
