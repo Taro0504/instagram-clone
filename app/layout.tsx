@@ -1,33 +1,28 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import { ReactNode } from "react";
 import { Inter } from "next/font/google";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { ClientProviders } from "../components/ClientProviders";
 
 // Inter フォントを使用
 const inter = Inter({ subsets: ["latin"] });
 
-// メタデータ設定
-export const metadata: Metadata = {
+// メタデータ定義
+export const metadata = {
   title: "Instagram Clone",
   description:
     "Next.js と Supabase で構築された Instagram クローンアプリケーション",
 };
 
+interface RootLayoutProps {
+  children: ReactNode;
+}
+
 // ルートレイアウト
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </div>
+        <ClientProviders>{children}</ClientProviders>
       </body>
     </html>
   );

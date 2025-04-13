@@ -8,6 +8,3 @@ alwaysApply: false
 
 - UIコンポーネントライブラリ
  - shadcn UI
-
-- routerライブラリ
- - tanstack router
